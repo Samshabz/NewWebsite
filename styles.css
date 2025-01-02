@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+:root {
+    --font-size-heading: 1rem; /* Define a variable for heading font size */
+    --font-size-paragraph: 1rem; /* Define a variable for paragraph font size */
+    --font-size-heading1: 2rem; /* Define a variable for heading font size */
+    --font-size-heading2: 2rem; /* Define a variable for heading font size */
+    /* Light theme defaults */
+    --h1-color: #000; /* Define a variable for h1 color */
+    --h2-color: #000; /* Define a variable for h2 color */
+    --h3-color: #000; /* Define a variable for h3 color */
+    --p-color: #000; /* Define a variable for paragraph color */
+    --sidebar-textcolor: #333; /* Define a variable for sidebar text color */
+    --bg-color: #f4f4f4; /* Define a variable for background color */
+    --sidebg-color: ##f4f4f4; /* Define a variable for background color */
+    --card-front-color: rgba(255, 255, 255, 0.228); /* Define a variable for card front color */
+    --card-back-color: #fff6; /* Define a variable for card back color */
+    --card-outline-color: #dadada; /* Define a variable for card outline color */
+    --bg-color: #f4f4f4; /* Define a variable for background color */
+    --accent-color: #aa7200; /* Define a variable for accent color */
+    --side-outline-color: #000;
+    --start-bg-color: rgb(168, 164, 164);
+     /* #e69900; Define a variable for start background color */
+    --bg-color: #f4f4f4; /* Define a variable for background color */
+    --hr-color: #333;
+  
+
+    }
+
+
+
+
+    
+
+
+
+    
+.dark-theme {
+
+  --side-outline-color: #fff;
+  --h1-color: #fff; /* Define a variable for h1 color */
+  --h2-color: gold; /* Define a variable for h2 color */
+  --h3-color: #fff; /* Define a variable for h3 color */
+  --p-color: #ddd; /* Define a variable for paragraph color */
+  --sidebar-textcolor: #bbb; /* Define a variable for sidebar text color */
+  --bg-color: #000000; /* Define a variable for background color */
+  --sidebg-color: #000000;
+  --hr-color: #aaa;
+  --accent-color: #ed9b03;
+
+  --card-front-color: #2b2b2b; /* Define a variable for card front color */
+  --card-back-color: #3a3a3a; /* Define a variable for card back color */
+  --card-outline-color: #444; /* Define a variable for card outline color */
+
+}
+
+
+/* Global styling */
+* {
+  /* set font size */
+  font-size: var(--font-size-paragraph);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Title {
+  position: absolute;
+  top: 15vh;
+  z-index: 10000;
+  padding-top: 1rem;
+  color: var(--h1-color);
+  font-family: 'Roboto', sans-serif; /* Professional, clean, and thin font */
+  font-size: 4rem; /* Adjust the size */
+  font-weight: 300; /* Thin font weight */
+  text-align: center; /* Center-align the text */
+  margin: 0;
+}
+
+
+.Subtitle {
+  position: absolute;
+  top: 30vh;
+  z-index: 10000; 
+  color: var(--h1-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem; /* Smaller subtitle */
+  font-weight: 300;
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+.arrow-down {
+  position: absolute;
+  bottom: 1rem; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg); /* Rotate the '>' to point down */
+  color: var(--h1-color); /* Use your CSS variable for color */
+  font-size: 3rem; /* Adjust size of the arrow */
+  font-weight: 10; /* Ensure the arrow is bold and prominent */
+  /* make font even thinner without weight */
+  font-family: 'Roboto', sans-serif;
+  animation: bounce 1.5s infinite; /* Add bounce animation */
+  cursor: pointer;
+  text-decoration: none; /* Removes underline */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0) rotate(90deg);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px) rotate(90deg);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px) rotate(90deg);
+  }
+}
+
+/* CSS for angled line */
+.angled-line {
+  position: absolute;
+  bottom: 30%; /* Start 25% from the bottom of the page */
+  left: 0; /* Start at the left edge */
+  width: 100vw; /* Stretch across the page */
+  height: 2px; /* Thickness of the line */
+  background-color: var(--h1-color); /* Line color */
+  transform: rotate(-10deg); /* Rotate to 20 degrees */
+  transform-origin: left bottom; /* Rotate from the left bottom corner */
+}
+
+
+
+
+
+
+
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-color);
+  transition: background-color 0.5s ease, color 0.5s ease; /* Add transition here */
+  color: var(--p-color);
+  scroll-behavior: smooth;
+}
+
+
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 15vw;
+  padding-right: 1rem;  
+  height: 100dvh;
+  background-color: var(--sidebg-color);
+  transition: background-color 0.5s ease, color 0.5s ease; /* Add transition here */
+  border-right: 1px solid var(--side-outline-color);
+  padding-top: 3rem;
+  z-index: 10;
+}
+.sidebar ul {
+  list-style: none;
+  margin: 0 0 0 1rem;
+  padding: 0;
+  text-transform: uppercase;
+}
+.sidebar li {
+  margin-bottom: 1rem;
+}
+.sidebar a {
+  text-decoration: none;
+  color: var(--sidebar-textcolor);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.sidebar a:hover,
+.sidebar .active {
+  color: var(--accent-color);
+}
+
+
+.download-button {
+  z-index: 10000;
+  position: absolute;
+  top: 35vh;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  margin-top: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000; /* Black text */
+  text-decoration: none;
+  background-color: #f5f5f5; /* Light gray background */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: all 0.3s ease;
+}
+
+.download-button i {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.medal{
+  /* transparency */
+  opacity: 0.8;
+}
+
+.download-button:hover {
+  background-color: #e0e0e0; /* Darker gray on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  color: #000; /* Maintain black text on hover */
+}
+
+/* Section Styling */
+#about img {
+  margin-top: 1rem;
+  padding: 0rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+
+
+/* Image Styling */
+.single-image {
+  width: 80vw;
+  max-width: 99%; /* Adjust maximum size */
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  /* margin-left: 0; */
+}
+
+#resume .single-image{
+  margin-top: 1rem;
+}
+
+
+/* Content wrapper */
+.content {
+  margin-left: 15vw; /* ensure page is separated from sidebar */
+}
+
+/* Section styling + fade-in transition */
+.section {
+  min-height: 100dvh;
+  padding: 6rem 3rem 3rem 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+
+
+}
+
+.grid-intro {
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: var(--sidebar-textcolor);
+}
+
+
+
+#start.section {
+min-height: 100dvh; /* Declared twice */
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+
+}
+
+.angled-line {
+  display: none; /* Hide the line on the start page */  
+}
+
+/* Start page with distinct orange-ish background */
+#start {
+  background-color: var(--start-bg-color);
+  /* background image bg.jpg */
+  /* background-image: url('bg.jpg'); */
+  background-size: cover;
+  background-position: center;
+  
+  color: #1b1b1b;
+}
+
+
+h1 {
+  color: var(--h1-color);
+  transition: color 0.5s ease, color 0.5s ease; /* Add transition here */
+  font-size: var(--font-size-heading1);
+}
+
+h2 {
+  color: var(--h2-color);
+  /* font-size: var(--font-size-heading2); */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; /* Thin font weight */
+  font-size: var(--font-size-heading2);
+}
+
+/* Common heading styles */
+h1, h2 {
+  margin-bottom: 1rem;
+}
+
+
+
+
+/* Buttons Start */
+
+/* Modern button styling */
+button, .ContactButton {
+  background-color: gold;
+  color: #1b1b1b;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover, .ContactButton:hover {
+  background-color: #d4af37;
+}
+
+
+
+
+
+
+
+
+.EndorsementButton, .ContactButton {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+
+.ContactButton img{
+margin-top: 0rem;
+margin: 0 0;
+width: 1rem;
+/* center vertically */
+height: 1rem;
+margin-right: 0.5rem;
+}
+
+
+.ContactButton {
+  display: inline-flex; /* Use inline-flex to prevent stacking */
+  align-items: center; /* Vertically center the logo */
+  text-decoration: none;
+}
+
+
+
+
+
+
+/* Buttons End */
+
+
+
+#achievements, #projects {
+  width: 100%;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+
+
+.cards-container {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  perspective: 1000px;
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card.expanded {
+  grid-column: 1 / -1; /* Expand across all columns */
+  width: 99%;        /* Adjust as needed */
+  margin: 0 auto;     /* Center it */
+}
+
+.card-inner {
+  width: 100%;
+  height: 200px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card.expanded .card-inner {
+  min-height: 300px; /* Expand height when clicked */
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: var(--card-front-color);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.card-back a{
+  margin-bottom: 2rem;
+}
+
+.card-front {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  overflow-y: auto; /* So longer text can scroll if needed */
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  /* increase darkness */
+  filter: brightness(0.8);
+}
+
+
+

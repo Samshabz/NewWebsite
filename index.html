@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="phone.css">
+  <link rel="stylesheet" href="NightSwitch.css">
+
+  <!-- Animation CSS (only for #start) -->
+  <link rel="stylesheet" type="text/css" href="./backgroundshift/base.css" />
+  <link rel="stylesheet" type="text/css" href="./backgroundshift/demo3.css" />
+
+  <!-- Optional check for CSS variables -->
+  <script>
+    document.documentElement.className = "js";
+    var supportsCssVars = function() {
+      var e, t = document.createElement("style");
+      t.innerHTML = "root: { --tmp-var: bold; }";
+      document.head.appendChild(t);
+      e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
+      t.parentNode.removeChild(t);
+      return e;
+    };
+    if (!supportsCssVars()) {
+      alert("Please view this demo in a modern browser that supports CSS Variables.");
+    }
+  </script>
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#start">Start</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#endorsements">Endorsements</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <!-- START -->
+    <!-- Wrap #start with .content--canvas.demo-3 + canvas for the background shift -->
+    <section id="start" class="section content--canvas demo-3">
+
+
+      <p class="Title">Sameer Shaboodien</p>
+      <p class="Subtitle">Electrical and Electronic Engineer</p>
+      
+      <br>
+      <canvas class="background-canvas"></canvas>
+      <br>
+      <a href="resume.pdf" class="download-button" target="_blank">
+        <i class="fa fa-external-link"></i> Open Resume
+      </a>
+      <div class="angled-line"></div>
+
+      <div class="theme-switch-wrapper">
+        <input id="checkbox" type="checkbox" class="theme-switch__checkbox" />
+        <label class="switch" for="checkbox">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="slider">
+            <path
+              d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V256c0 17.7 14.3 32 32 32s32-14.3 32-32V32zM143.5 120.6c13.6-11.3 15.4-31.5 4.1-45.1s-31.5-15.4-45.1-4.1C49.7 115.4 16 181.8 16 256c0 132.5 107.5 240 240 240s240-107.5 240-240c0-74.2-33.8-140.6-86.6-184.6c-13.6-11.3-33.8-9.4-45.1 4.1s-9.4 33.8 4.1 45.1c38.9 32.3 63.5 81 63.5 135.4c0 97.2-78.8 176-176 176s-176-78.8-176-176c0-54.4 24.7-103.1 63.5-135.4z"
+            ></path>
+          </svg>
+        </label>
+      </div>
+
+      <a href="#about" class="arrow-down">
+        >
+      </a>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <br>
+      <h2>About Me</h2>
+      <p>
+        Hi! I am an Electrical Engineering Master's student eager to make an impact in the world.
+        <br><br>
+        My academic record demonstrates consistent achievement—from a 90% grade 12 average to a 70% undergraduate average and an 80% thesis mark. I have applied these skills through multiple internships and contractual work. 
+        <br><br>
+        However, my drive extends beyond traditional metrics. Serving as a class representative, vice-chairman of a community service society, teaching assistant, and tutor has honed my leadership and communication skills. These abilities were further refined through various projects and an international program, where I was honored with the Best Student Award. The combination of these experiences and the skills I have gained has been instrumental in my entrepreneurial ventures and network building.
+        <br><br>
+        As I grow and adapt, two principles remain immovable: undertake actions only if they lead to self-improvement and always if they reflect the behavior desirable in the world. 
+      </p>
+
+      <div class="gallery">
+        <img src="about.jpg" alt="Description of the picture" class="single-image">
+      </div>
+    </section>
+
+    <!-- ENDORSEMENTS -->
+    <section id="endorsements" class="section">
+      <h2>Endorsements</h2>
+      <br>
+      <button class="EndorsementButton">Stellenbosch University</button>
+      <button class="EndorsementButton">Octoco</button>
+      <button class="EndorsementButton">Lantern Engineering</button>
+
+      <div class="gallery">
+        <img src="medal.jpg" alt="Description of the picture" class="single-image medal">
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <p class="grid-intro">Click to flip card</p>
+      <br>
+      <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Thesis</h3>
+              <p>Synthesis and Evaluation of an Image-Based GNSS-Redundancy System for UAV Navigation.</p>
+            </div>
+            <div class="card-back">
+              <h4>Thesis Details</h4>
+              <p>More information about this project.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>E-Design 1</h3>
+              <p>Designed and developed a multi-input/output emergency lighting system, with a focus on extensive firmware development.</p>
+            </div>
+            <div class="card-back">
+              <h4>E-Design 1 Details</h4>
+              <p>
+                This project focused on designing hardware and software for a multi-control emergency system powered by batteries. The system featured various analog and digital control mechanisms. A significant portion of the work involved firmware design and testing for integrating various input/output systems and implementing multiple functions, such as SOS and strobe modes.
+                <br><br>
+                Through this project, I developed skills in I2C, UART, interrupts, DMA, signal calibration, and enhanced my abilities in report writing, design, and problem-solving. The project was assessed across three phases: automated demos, written theory tests, and a final technical report, where I achieved a 73%. It was a valuable learning experience, and I am proud of the final product.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>E-Design 2</h3>
+              <p>Designed and developed a foundational health monitoring system, emphasizing circuit design for accurate sensor signal processing.</p>
+            </div>
+            <div class="card-back">
+              <h4>E-Design 2 Details</h4>
+              <p>
+                This project involved the development of a health monitoring system capable of measuring heart rate, weight, temperature, and steps. The work focused on designing custom circuits to filter and amplify low-level sensor signals, along with digital processing to ensure accurate measurements. The collected data was displayed on an LCD screen and transmitted via Wi-Fi.
+                <br><br>
+                Through this project, I enhanced my skills in analog design, sensor interfacing, component research, and broader problem-solving and design. The assessment comprised live and recorded demonstrations, as well as a final technical report, culminating in a final mark of 86%.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>entrepreneurial Ventures</h3>
+              <p>Front side placeholder</p>
+            </div>
+            <div class="card-back">
+              <h4></h4>
+              <p>
+                Starting small, like many others, I began by selling snacks and energy drinks to support my fellow students during rigorous exam seasons. Gradually, I ventured into more artistic crafts, designing and selling custom-made patches. My most significant endeavor, however, was identifying a gap in the market for affordable perfumes that do not compromise quality. After thorough research to find the right product, I successfully imported and sold these perfumes. 
+                <br><br>
+                While these ventures were neither highly scalable nor sustainable, they provided invaluable lessons. I gained a deep appreciation for the importance of market research, variety in products, and sales techniques.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Project 4</h3>
+              <p>Front side placeholder</p>
+            </div>
+            <div class="card-back">
+              <h4>Project 4 Details</h4>
+              <p>Back side with more info about Project 4.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Project 5</h3>
+              <p>Front side placeholder</p>
+            </div>
+            <div class="card-back">
+              <h4>Project 5 Details</h4>
+              <p>Back side with more info about Project 5.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section">
+      <h2>Achievements</h2>
+      <p class="grid-intro">Click to flip card</p>
+      <br>
+      <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Project 1</h3>
+              <p>Short description</p>
+            </div>
+            <div class="card-back">
+              <h4>More details</h4>
+              <p>Full description goes here.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Project 2</h3>
+              <p>Short description</p>
+            </div>
+            <div class="card-back">
+              <h4>More details</h4>
+              <p>Full description goes here.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Project 2</h3>
+              <p>Short description</p>
+            </div>
+            <div class="card-back">
+              <h4>More details</h4>
+              <p>Full description goes here.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Project 2</h3>
+              <p>Short description</p>
+            </div>
+            <div class="card-back">
+              <h4>More details</h4>
+              <p>Full description goes here.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <h3>Project 2</h3>
+              <p>Short description</p>
+            </div>
+            <div class="card-back">
+              <h4>More details</h4>
+              <p>Full description goes here.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <br>
+      <a href="tel:+27786109425" class="ContactButton">
+        <img src="phone-icon-946.png" alt="Phone">
+        +27 78 610 9425
+      </a>
+      <a href="mailto:samshabz13@gmail.com" class="ContactButton">
+        <img src="email.png" id="LINKEDIN" alt="Email">
+        Samshabz13@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/sameer-shaboodien/?originalSubdomain=za" target="blank" class="ContactButton">
+        <img src="linkedin.png" alt="User">
+        Sameer Shaboodien
+      </a>
+
+      <div class="gallery">
+        <img src="coffee.jpg" alt="Description of the picture" class="single-image">
+      </div>
+    </section>
+  </div>
+
+  <!-- Existing scripts -->
+  <script src="script.js"></script>
+
+  <!-- Animation scripts (only for the start section) -->
+  <script src="./backgroundshift/noise.min.js"></script>
+  <script src="./backgroundshift/util.js"></script>
+  <script src="./backgroundshift/shift.js"></script>
+</body>
+</html>

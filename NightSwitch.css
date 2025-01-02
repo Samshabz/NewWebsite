@@ -1,0 +1,68 @@
+/* Container for the theme switch */
+.theme-switch-wrapper {
+  position: absolute;
+  top: 60vh; /* Adjust position as needed */
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 1000;
+}
+
+/* Hide the default checkbox */
+#checkbox {
+  display: none;
+}
+
+/* Style for the switch label */
+.switch {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: rgb(99, 99, 99);
+  border-radius: 50%;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(126, 126, 126);
+  box-shadow: 0px 0px 3px rgb(2, 2, 2) inset;
+  transition: background-color 0.3s, border 0.3s, box-shadow 0.3s;
+}
+
+/* SVG icon inside the switch */
+.switch svg {
+  width: 1.2em;
+  transition: filter 0.3s, fill 0.3s;
+}
+
+/* Path inside the SVG */
+.switch svg path {
+  fill: rgb(48, 48, 48);
+}
+
+/* Styles when the checkbox is checked (Dark Theme) */
+#checkbox:checked + .switch {
+  background-color: rgb(146, 180, 184);
+  border: 2px solid rgb(255, 255, 255);
+  box-shadow: 
+    0px 0px 1px rgb(151, 243, 255) inset,
+    0px 0px 2px rgb(151, 243, 255) inset,
+    0px 0px 10px rgb(151, 243, 255) inset,
+    0px 0px 40px rgb(151, 243, 255),
+    0px 0px 100px rgb(151, 243, 255),
+    0px 0px 5px rgb(151, 243, 255);
+}
+
+/* SVG styles when the checkbox is checked */
+#checkbox:checked + .switch svg {
+  filter: drop-shadow(0px 0px 5px rgb(151, 243, 255));
+}
+
+#checkbox:checked + .switch svg path {
+  fill: rgb(255, 255, 255);
+}
+
+/* Optional: Smooth transition for the switch */
+.switch {
+  transition: all 0.3s ease;
+}

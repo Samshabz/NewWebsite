@@ -1,0 +1,103 @@
+
+/* Media queries */
+
+
+
+body.touchscreen .sidebar {
+    /* remove for phone */
+    display: none;
+    width: 0;
+  }
+
+body.touchscreen #start{
+    background-color: (--start-bg-color);
+    background-image: none;
+}
+
+  body.touchscreen .section {
+    width: 100vw;
+    min-height: 0vh;
+    padding: 1rem;
+  }
+
+  body.touchscreen .ContactButton {
+    width: 99%;
+  }
+
+
+  
+body.touchscreen .card-inner {
+  width: 100%;
+  /* height: auto; */
+  margin-bottom: auto;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+body.touchscreen .card-front {
+  height: max-content;
+}
+
+body.touchscreen .card.expanded .card-inner {
+  min-height: max-content; /* Expand height when clicked */
+}
+
+
+  body.touchscreen .EndorsementButton {
+    width: 99%;
+  }
+  
+  
+  body.touchscreen #start.section {
+    padding: 0rem;
+  }
+  
+  body.touchscreen .content {
+    margin-left: 0;
+  }
+  
+  body.touchscreen .grid {
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    gap: 0.5rem;
+    
+  
+  }
+  body.touchscreen .grid h3{
+    font-size: 1.5rem;
+  }
+  body.touchscreen .grid p{
+    font-size: 1rem;
+  }
+  
+  body.touchscreen .single-image {
+    width: 95vw;
+  }
+
+
+  
+  
+  
+    
+
+  body.touchscreen .Subtitle {
+  
+    top: 30vh;
+  }
+
+
+  body.touchscreen .Title {
+
+    top: 20vh;
+    /* increase font size 1.5x */
+    font-size: 3rem;
+    
+  }
+
+    body.touchscreen .Subtitle {
+        font-size: 1.5rem;
+    }
+
+    body.touchscreen .ContactButton {
+        width: 100%;
+    }
