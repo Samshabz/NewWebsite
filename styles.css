@@ -8,20 +8,20 @@
     --font-size-heading1: 2rem; /* Define a variable for heading font size */
     --font-size-heading2: 2rem; /* Define a variable for heading font size */
     /* Light theme defaults */
-    --h1-color: #000; /* Define a variable for h1 color */
+    --h1-color: #000000; /* Define a variable for h1 color */
     --h2-color: #000; /* Define a variable for h2 color */
     --h3-color: #000; /* Define a variable for h3 color */
     --p-color: #000; /* Define a variable for paragraph color */
     --sidebar-textcolor: #333; /* Define a variable for sidebar text color */
     --bg-color: #f4f4f4; /* Define a variable for background color */
-    --sidebg-color: ##f4f4f4; /* Define a variable for background color */
+    --sidebg-color: #cecece; /* Define a variable for background color */
     --card-front-color: rgba(255, 255, 255, 0.228); /* Define a variable for card front color */
     --card-back-color: #fff6; /* Define a variable for card back color */
     --card-outline-color: #dadada; /* Define a variable for card outline color */
     --bg-color: #f4f4f4; /* Define a variable for background color */
-    --accent-color: #aa7200; /* Define a variable for accent color */
-    --side-outline-color: #000;
-    --start-bg-color: rgb(168, 164, 164);
+    --accent-color: gold; /* Define a variable for accent color */
+    --side-outline-color: #999;
+    --start-bg-color: #f4f4f4;
      /* #e69900; Define a variable for start background color */
     --bg-color: #f4f4f4; /* Define a variable for background color */
     --hr-color: #333;
@@ -30,25 +30,20 @@
     }
 
 
-
-
-    
-
-
-
     
 .dark-theme {
+  --start-bg-color: #000;
 
-  --side-outline-color: #fff;
+  --side-outline-color: #333;
   --h1-color: #fff; /* Define a variable for h1 color */
   --h2-color: gold; /* Define a variable for h2 color */
   --h3-color: #fff; /* Define a variable for h3 color */
   --p-color: #ddd; /* Define a variable for paragraph color */
   --sidebar-textcolor: #bbb; /* Define a variable for sidebar text color */
   --bg-color: #000000; /* Define a variable for background color */
-  --sidebg-color: #000000;
+  --sidebg-color: #333;
   --hr-color: #aaa;
-  --accent-color: #ed9b03;
+  --accent-color: gold;
 
   --card-front-color: #2b2b2b; /* Define a variable for card front color */
   --card-back-color: #3a3a3a; /* Define a variable for card back color */
@@ -159,7 +154,7 @@ body {
   height: 100dvh;
   background-color: var(--sidebg-color);
   transition: background-color 0.5s ease, color 0.5s ease; /* Add transition here */
-  border-right: 1px solid var(--side-outline-color);
+  /* border-right: 1px solid var(--h1-color); */
   padding-top: 3rem;
   z-index: 10;
 }
@@ -180,9 +175,16 @@ body {
   transition: color 0.3s;
 }
 .sidebar a:hover,
-.sidebar .active {
+.dark-theme .sidebar .active {
   color: var(--accent-color);
 }
+
+.light-theme .sidebar .active {
+  text-decoration: underline;
+  /* underline color */
+  text-decoration-color: var(--sidebar-textcolor);
+}
+
 
 
 .download-button {
@@ -459,3 +461,68 @@ margin-right: 0.5rem;
 
 
 
+
+
+
+
+
+
+
+
+/* 1. Define the rotate animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 2. Style the #start section to position the pseudo-element correctly */
+#start {
+  position: relative; /* Establish a positioning context for the pseudo-element */
+  overflow: hidden;   /* Ensure the gradient doesn't overflow the section */
+  --size: 30rem;
+  --speed: 20s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+}
+
+/* 3. Create the gradient effect using the ::before pseudo-element */
+#start::before {
+  content: "";
+  position: absolute;
+  top: calc(50%-15dvw); /* Adjusted to move up */
+  left: calc(50%-15dvw); /* Adjusted to move left */
+  width: 30dvw;
+  height: 30dvw;
+  filter: blur(calc(var(--size, 75px) / 20)); 
+  background-image: linear-gradient(
+    hsl(28, 73%, 55%),
+    gold
+  );
+  animation: rotate var(--speed, 50s) var(--easing, cubic-bezier(0.8, 0.2, 0.2, 0.8)) 
+             alternate infinite;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  transform: translate(-50%, -50%) rotate(0deg); /* Centers based on new top/left */
+  z-index: -1; /* Position the gradient behind the content */
+}
+
+body.touchscreen #start::before {
+  width: 50dvw;
+  height: 50dvw;
+  top: calc(25%); /* Adjusted to move up */
+  left: calc(25%); /* Adjusted to move left */
+}
+
+/* 5. Scope transitions to elements within #start only */
+#start * {
+  transition: all 0.5s ease-out;
+}
+
+/* 6. Adjust gradient size variables for larger screens */
+@media (min-width: 720px) {
+  #start {
+    --size: 35rem; /* Update size variable for larger screens */
+  }
+}

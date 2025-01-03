@@ -25,23 +25,7 @@ body.touchscreen #start{
   }
 
 
-  
-body.touchscreen .card-inner {
-  width: 100%;
-  /* height: auto; */
-  margin-bottom: auto;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  position: relative;
-}
 
-body.touchscreen .card-front {
-  height: max-content;
-}
-
-body.touchscreen .card.expanded .card-inner {
-  min-height: max-content; /* Expand height when clicked */
-}
 
 
   body.touchscreen .EndorsementButton {
@@ -63,6 +47,7 @@ body.touchscreen .card.expanded .card-inner {
     
   
   }
+
   body.touchscreen .grid h3{
     font-size: 1.5rem;
   }
@@ -77,7 +62,10 @@ body.touchscreen .card.expanded .card-inner {
 
   
   
-  
+  canvas {
+    will-change: transform;
+    transform: translateZ(0);
+}
     
 
   body.touchscreen .Subtitle {
@@ -88,7 +76,7 @@ body.touchscreen .card.expanded .card-inner {
 
   body.touchscreen .Title {
 
-    top: 20vh;
+    top: 12vh;
     /* increase font size 1.5x */
     font-size: 3rem;
     
@@ -101,3 +89,68 @@ body.touchscreen .card.expanded .card-inner {
     body.touchscreen .ContactButton {
         width: 100%;
     }
+
+
+
+
+  
+
+
+
+    /* Ensure these styles are added after your existing CSS */
+
+
+body.touchscreen .cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Adjust gap as needed */
+}
+
+/* Remove grid-specific properties and allow cards to take full width */
+body.touchscreen .card {
+  width: 100%; /* Full width on mobile */
+  max-width: 400px; /* Optional: Limit maximum width */
+  perspective: 1000px; /* Ensure perspective for flip */
+  margin: 0 auto; /* Center the card */
+}
+
+/* Remove fixed height and allow dynamic height based on content */
+body.touchscreen .card-inner {
+  height: auto; /* Remove fixed height */
+  padding-top: 0; /* Remove aspect ratio padding */
+  transition: transform 0.6s; /* Ensure transition remains smooth */
+  transform-style: preserve-3d;
+}
+
+/* Adjust expanded state if necessary */
+body.touchscreen .card.expanded .card-inner {
+  min-height: 0; /* Optional: Adjust if you want expanded cards to have a minimum height */
+}
+
+/* Change positioning to relative and allow height to adjust based on content */
+body.touchscreen .card-front,
+body.touchscreen .card-back {
+  position: relative; /* Remove absolute positioning */
+  height: auto; /* Let height be determined by content */
+  backface-visibility: hidden;
+  padding: 1rem; /* Adjust padding for mobile readability */
+  box-sizing: border-box;
+}
+
+/* Hide the back of the card by default on mobile */
+body.touchscreen .card-back {
+  display: none; /* Hide back initially */
+  transform: rotateY(180deg);
+  background-color: var(--card-back-color); /* Ensure back has appropriate background */
+}
+
+/* Show back when the card is flipped */
+body.touchscreen .card.flipped .card-back {
+  display: block; /* Show back when flipped */
+}
+
+body.touchscreen .card.flipped .card-front {
+  display: none; /* Hide front when flipped */
+}
+
