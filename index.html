@@ -5,6 +5,7 @@
   <title>Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <!-- Existing CSS -->
   <link rel="stylesheet" href="styles.css">
@@ -35,11 +36,11 @@
   <!-- Sidebar Navigation -->
   <nav class="sidebar">
     <ul>
-      <li><a href="#start">Start</a></li>
+      <li><a href="#start">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#endorsements">Endorsements</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#endorsements">Endorsements</a></li>
+      <!-- <li><a href="#achievements">Achievements</a></li> -->
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -57,11 +58,9 @@
       <!-- <br> -->
       <!-- <canvas class="background-canvas"></canvas> -->
       <br>
-      <a href="resume.pdf" class="download-button" target="_blank">
+      <a href="pdfs/FINAL CV.pdf" class="download-button" target="_blank">
         <i class="fa fa-external-link"></i> Open Resume
       </a>
-      <div class="angled-line"></div>
-
       <div class="theme-switch-wrapper">
         <input id="checkbox" type="checkbox" />
         <label class="switch" for="checkbox">
@@ -75,45 +74,65 @@
       
       
 
-      <a href="#about" class="arrow-down">
+      <div class="arrow-down">
         >
-      </a>
+      </div>
+
+      
     </section>
+
 
     <!-- ABOUT -->
-    <section id="about" class="section">
-      <br>
-      <h2>About Me</h2>
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <div class="about-content">
+    <!-- Introduction -->
+    <p>
+      <i class="fa-solid fa-user-graduate"></i> Hello! My name is <strong>Sameer</strong>, and I am currently pursuing my 
+      <strong>Master's degree in Electrical Engineering</strong>, focusing on the electric vehicle industry.
+    </p>
+
+
+
+    <!-- Leadership and Achievements -->
+    <div class="leadership-section">
+      <h3><i></i> Leadership & Achievements</h3>
+      <ul>
+        <li><i class="fa-solid fa-chalkboard-teacher"></i> Class Representative</li>
+        <li><i class="fa-solid fa-hand-holding-heart"></i> Vice-Chairman of Community Service Organization</li>
+        <li><i class="fa-solid fa-user-tie"></i> Teaching Assistant and Tutor</li>
+        <li><i class="fa-solid fa-globe"></i> International Program: Best Student Award (Leadership)</li>
+        <li><i class="fa-solid fa-network-wired"></i> Entrepreneurial Ventures & Network Building</li>
+      </ul>
+    </div>
+
+    <!-- Core Principles -->
+    <div class="core-principles">
+      <h3>Core Principles</h3>
       <p>
-
-        Hello! My name is Sameer, and I am currently pursuing my Master's degree in Electrical Engineering, focusing on the electric vehicle industry.
-        <br><br>
-        My academic journey showcases my dedication, with a 90% average in grade 12, a 70% average during my undergraduate studies, and an 80% mark on my thesis (where I tackled GPS spoofing). I've put these skills to use through various internships and contract positions.
-        <br><br>
-        
-        Yet, my ambitions include more than simply my grades. My roles as a class representative, vice-chairman of a community service organization, teaching assistant, and tutor have helped me develop strong leadership and communication skills. These abilities were further enhanced through different projects and an international program, where I was proud to receive the Best Student Award. The blend of these experiences and the skills I've acquired has been crucial for my entrepreneurial efforts and building my network.
-        <br><br>
-        
-        As I continue to grow and evolve, I hold onto two core principles: I will only take actions that contribute to my self-improvement and that embody the kind of behavior I wish to see in the world.
+        <i class="fa-solid fa-arrow-up"></i> <strong>Self-Improvement:</strong> I will only take actions that contribute to my self-improvement.
       </p>
+      <p>
+        <i class="fa-solid fa-handshake"></i> <strong>World Contribution:</strong> I strive to embody the kind of behavior I wish to see in the world.
+      </p>
+    </div>
 
-      <div class="gallery">
-        <img src="about.jpg" alt="Description of the picture" class="single-image">
-      </div>
-    </section>
+    <!-- Academics -->
+    <div class="academic-section">
+      <h3><i></i> Academic Achievements</h3>
+      <ul>
+        <li><i class="fa-solid fa-award"></i> 90% Grade 12 average</li>
+        <li><i class="fa-solid fa-university"></i> 70% Undergraduate average</li>
+        <li><i class="fa-solid fa-book"></i> 80% Thesis mark</li>
+      </ul>
+    </div>
 
-    <!-- ENDORSEMENTS -->
-    <section id="endorsements" class="section">
-      <h2>Endorsements</h2>
-      <br>
-      <button class="EndorsementButton">Stellenbosch University</button>
-      <button class="EndorsementButton">Octoco</button>
-      <button class="EndorsementButton">Lantern Engineering</button>
 
-      <div class="gallery">
-        <img src="medal.jpg" alt="Description of the picture" class="single-image medal">
-      </div>
-    </section>
+  </div>
+</section>
+
+
+
 
     <section id="projects" class="section">
       <h2>Projects</h2>
@@ -126,12 +145,12 @@
               <div class="card-front">
                 <h3>Thesis</h3>
                 <p> 
-                  Addressed the challenge of GPS spoofing through the implementation of image-based navigation. Project title: 'Synthesis and Evaluation of an Image-Based GNSS-Redundancy System for UAV Navigation.'
+                  Synthesized and evaluated an image-based navigation system for UAVs to counter GPS denial attacks. 
                 </p>
               </div>
               <div class="card-back">
                 <h4>Thesis Details</h4>
-                <p>More information about this project.</p>
+                <p>Project title: 'Synthesis and Evaluation of an Image-Based GNSS-Redundancy System for UAV Navigation.' Extra. </p>
               </div>
             </div>
           </div>
@@ -207,7 +226,7 @@
             <div class="card-front">
               <h3>Smart System</h3>
               <p>
-                Developed a smart RGB lighting strip with interactive patterns, games, and a music visualizer. Tackled challenges like voltage drops and cost-effective power solutions.
+                Developed a smart RGB lighting strip with interactive patterns, games, a music visualizer, and a local web server. Tackled hardware challenges.
               </p>
             </div>
             <div class="card-back">
@@ -215,7 +234,7 @@
               <p>
                 This project showcased my passion for smart home and IoT technologies. I created a 6-meter smart lighting strip with individually addressable RGB LEDs, featuring dynamic music visualization, interactive games, and customizable patterns. The system was controlled through a user-friendly, locally hosted web interface. 
                 <br><br>
-                Challenges like managing voltage drops and designing efficient power solutions were successfully addressed. Future improvements include advanced power supply designs, modular components, better thermal regulation, and aesthetic enhancements.
+                Challenges like managing color accuracy, voltage drops and designing low-cost high-current solutions were successfully addressed. Future improvements include advanced power supply designs, modular components, better thermal regulation, and aesthetic enhancements.
                 <br><br>
                 I also plan to explore Matter integration to align with future smart home standards.
 
@@ -235,11 +254,11 @@
               <h4>Analog Amplifier Detail</h4>
               <p>
                 
-                As part of a third-year electronics module, I designed and built an amplifier capable of delivering 24W of power to an 8-ohm load. The project involved researching and implementing advanced filtering and high-power amplification techniques, all while using basic analog circuit components.
+                As part of a third-year electronics module, my partner and I designed and built an amplifier capable of delivering 24W of power to an 8-ohm load. The project involved researching and implementing advanced filtering and high-power amplification techniques, all while using basic analog circuit components.
                 <br><br>
-                The amplifier featured precise bass and treble control and was evaluated in a lab setting, where it produced a sound quality that exceeded expectations. The clarity and richness of the sound outperformed high-end commercial systems, filling the lab with powerful and vibrant audio.
+                The amplifier featured precise bass and treble control and was tested in a lab setting for different distortion types, where it produced a sound quality that exceeded expectations. The clarity and richness of the sound outperformed high-end commercial systems, filling the lab with powerful and vibrant audio.
                 <br><br>
-                This project deepened my understanding of analog circuit design and audio engineering, showcasing the immense potential of foundational components in delivering superior performance.
+                This project deepened my understanding of analog circuit design and audio engineering, showcasing the potential to create sound products with basic components.
               </p>
             </div>
           </div>
@@ -247,12 +266,45 @@
       </div>
     </section>
 
+
+    
+    <!-- ENDORSEMENTS -->
+    <section id="endorsements" class="section">
+      <div class="gold-block">
+      <h2>
+        Endorsements
+      </h2>
+    </div>
+      
+      <br>
+
+      <a href="pdfs/octocoletter.pdf" class="EndorsementButton" target="_blank" rel="noopener noreferrer">
+        Octoco
+      </a>
+      <a href="pdfs/Lantern.pdf" class="EndorsementButton" target="_blank" rel="noopener noreferrer">
+        Lantern Engineering
+      </a>
+
+      <a href="pdfs/Stellenboschletter.pdf" class="EndorsementButton" target="_blank" rel="noopener noreferrer">
+        Stellenbosch University
+      </a>
+      
+      <br><br>
+      
+
+      <div class="gallery">
+        <img src="images/medal.jpg" alt="Description of the picture" class="single-image medal">
+      </div>
+    </section>
+
+
+<!-- 
     <section id="achievements" class="section">
       <h2>Achievements</h2>
       <p class="grid-intro">Click to flip card</p>
       <br>
       <div class="cards-container">
-        <!-- Card 1 -->
+
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
@@ -266,7 +318,7 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
+        
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
@@ -279,7 +331,7 @@
             </div>
           </div>
         </div>
-        <!-- Card 3 -->
+        
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
@@ -292,7 +344,8 @@
             </div>
           </div>
         </div>
-        <!-- Card 4 -->
+        
+
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
@@ -305,7 +358,8 @@
             </div>
           </div>
         </div>
-        <!-- Card 5 -->
+        
+
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
@@ -318,30 +372,30 @@
             </div>
           </div>
         </div>
-        <!-- Add more cards as needed -->
+        
       </div>
-    </section>
+    </section> -->
 
     <!-- CONTACT -->
     <section id="contact" class="section">
       <h2>Contact</h2>
       <br>
       <a href="tel:+27786109425" class="ContactButton">
-        <img src="phone-icon-946.png" alt="Phone">
+        <img src="icons/phone.png" alt="Phone">
         +27 78 610 9425
       </a>
       <a href="mailto:samshabz13@gmail.com" class="ContactButton">
-        <img src="email.png" id="LINKEDIN" alt="Email">
+        <img src="icons/email.png" id="LINKEDIN" alt="Email">
         Samshabz13@gmail.com
       </a>
       <a href="https://www.linkedin.com/in/sameer-shaboodien/?originalSubdomain=za" target="blank" class="ContactButton">
-        <img src="linkedin.png" alt="User">
+        <img src="icons/linkedin.png" alt="User">
         Sameer Shaboodien
       </a>
-
+<!-- 
       <div class="gallery">
-        <img src="coffee.jpg" alt="Description of the picture" class="single-image">
-      </div>
+        <img src="images/coffee.jpg" alt="Description of the picture" class="single-image">
+      </div> -->
     </section>
   </div>
 

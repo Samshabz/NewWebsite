@@ -7,23 +7,26 @@
     --font-size-paragraph: 1rem; /* Define a variable for paragraph font size */
     --font-size-heading1: 2rem; /* Define a variable for heading font size */
     --font-size-heading2: 2rem; /* Define a variable for heading font size */
+
+    
     /* Light theme defaults */
+    --sidebg-color: #cecece; /* Define a variable for background color */
+    --bg-color: #f4f4f4; /* Define a variable for background color */
+    --start-bg-color: #f4f4f4;
+
     --h1-color: #000000; /* Define a variable for h1 color */
     --h2-color: #000; /* Define a variable for h2 color */
     --h3-color: #000; /* Define a variable for h3 color */
     --p-color: #000; /* Define a variable for paragraph color */
     --sidebar-textcolor: #333; /* Define a variable for sidebar text color */
     --bg-color: #f4f4f4; /* Define a variable for background color */
-    --sidebg-color: #cecece; /* Define a variable for background color */
     --card-front-color: rgba(255, 255, 255, 0.228); /* Define a variable for card front color */
     --card-back-color: #fff6; /* Define a variable for card back color */
     --card-outline-color: #dadada; /* Define a variable for card outline color */
     --bg-color: #f4f4f4; /* Define a variable for background color */
     --accent-color: gold; /* Define a variable for accent color */
     --side-outline-color: #999;
-    --start-bg-color: #f4f4f4;
      /* #e69900; Define a variable for start background color */
-    --bg-color: #f4f4f4; /* Define a variable for background color */
     --hr-color: #333;
   
 
@@ -33,15 +36,16 @@
     
 .dark-theme {
   --start-bg-color: #000;
+  --bg-color: #000000; /* Define a variable for background color */
+  --sidebg-color: #545454;
 
+  
   --side-outline-color: #333;
   --h1-color: #fff; /* Define a variable for h1 color */
   --h2-color: gold; /* Define a variable for h2 color */
   --h3-color: #fff; /* Define a variable for h3 color */
   --p-color: #ddd; /* Define a variable for paragraph color */
   --sidebar-textcolor: #bbb; /* Define a variable for sidebar text color */
-  --bg-color: #000000; /* Define a variable for background color */
-  --sidebg-color: #333;
   --hr-color: #aaa;
   --accent-color: gold;
 
@@ -95,11 +99,11 @@
   transform: translateX(-50%) rotate(90deg); /* Rotate the '>' to point down */
   color: var(--h1-color); /* Use your CSS variable for color */
   font-size: 3rem; /* Adjust size of the arrow */
-  font-weight: 10; /* Ensure the arrow is bold and prominent */
+  font-weight: 100; /* Ensure the arrow is bold and prominent */
   /* make font even thinner without weight */
   font-family: 'Roboto', sans-serif;
   animation: bounce 1.5s infinite; /* Add bounce animation */
-  cursor: pointer;
+  /* cursor: pointer; */
   text-decoration: none; /* Removes underline */
 }
 
@@ -174,13 +178,17 @@ body {
   font-weight: 500;
   transition: color 0.3s;
 }
+
+@media (hover: hover) {
 .sidebar a:hover,
 .dark-theme .sidebar .active {
   color: var(--accent-color);
 }
+}
 
 .light-theme .sidebar .active {
-  text-decoration: underline;
+  /* text-decoration: bold; */
+  font-weight: bold;
   /* underline color */
   text-decoration-color: var(--sidebar-textcolor);
 }
@@ -217,31 +225,34 @@ body {
   opacity: 0.8;
 }
 
+@media (hover: hover) {
 .download-button:hover {
   background-color: #e0e0e0; /* Darker gray on hover */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow */
   color: #000; /* Maintain black text on hover */
 }
+}
 
 /* Section Styling */
-#about img {
-  margin-top: 1rem;
-  padding: 0rem;
-  border-radius: 1rem;
-  text-align: center;
-}
+
+
 
 
 
 /* Image Styling */
 .single-image {
-  width: 80vw;
-  max-width: 99%; /* Adjust maximum size */
+  position: absolute;
+  right: 0vw;
+  border-radius: 0;
+  margin-top: 0;
+  top:5rem;
+  clip-path: inset(4rem 0 calc(15%) 0); /* Crop 15% from top and bottom */
+    object-fit: cover;  
+  z-index: -1;
+  /* width: 90vw; */
+  max-width: 100%; /* Adjust maximum size */
   height: auto;
-  display: block;
-  border-radius: 1rem;
-  margin: 1rem auto;
-  /* margin-left: 0; */
+  
 }
 
 #resume .single-image{
@@ -328,7 +339,7 @@ h1, h2 {
 /* Buttons Start */
 
 /* Modern button styling */
-button, .ContactButton {
+.EndorsementButton, .ContactButton {
   background-color: gold;
   color: #1b1b1b;
   border: none;
@@ -338,8 +349,11 @@ button, .ContactButton {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-button:hover, .ContactButton:hover {
+
+@media (hover: hover) {
+.EndorsementButton:hover, .ContactButton:hover {
   background-color: #d4af37;
+}
 }
 
 
@@ -350,8 +364,9 @@ button:hover, .ContactButton:hover {
 
 
 .EndorsementButton, .ContactButton {
-  margin-right: 1rem;
-  margin-bottom: 1rem;
+  display: block; /* Force buttons to stack */
+  margin: 10px auto; /* Add vertical spacing and center */
+  text-decoration: none;
 
 }
 
@@ -366,14 +381,20 @@ margin-right: 0.5rem;
 }
 
 
-.ContactButton {
+.ContactButton, .EndorsementButton {
   display: inline-flex; /* Use inline-flex to prevent stacking */
   align-items: center; /* Vertically center the logo */
   text-decoration: none;
 }
 
-
-
+/* 
+#contact img, #endorsements img {
+  display: none !important;
+} */
+/* 
+#contact, #endorsements  {
+  min-height: 0;
+} */
 
 
 
@@ -386,7 +407,6 @@ margin-right: 0.5rem;
   padding: 3rem;
   box-sizing: border-box;
 }
-
 
 
 .cards-container {
@@ -405,8 +425,8 @@ margin-right: 0.5rem;
 
 .card.expanded {
   grid-column: 1 / -1; /* Expand across all columns */
-  width: 99%;        /* Adjust as needed */
-  margin: 0 auto;     /* Center it */
+  width: 99%;            /* Adjust as needed */
+  margin: 0 auto;       /* Center it */
 }
 
 .card-inner {
@@ -422,6 +442,12 @@ margin-right: 0.5rem;
 }
 
 .card-front, .card-back {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items horizontally */
+  padding: 1rem; /* Ensure padding is consistent */
+  box-sizing: border-box;
+  
   position: absolute;
   width: 100%;
   height: 100%;
@@ -429,41 +455,38 @@ margin-right: 0.5rem;
   background: var(--card-front-color);
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box;
-  padding: 1rem;
-}
-
-.card-back a{
-  margin-bottom: 2rem;
-}
-
-.card-front {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .card-back {
   transform: rotateY(180deg);
-  overflow-y: auto; /* So longer text can scroll if needed */
+  overflow-y: auto; /* Allows scrolling for longer content */
+  background: var(--card-back-color); /* Optional: Different background for the back */
+}
+
+.card-front h3, .card-back h4 {
+  align-self: center; /* Centers the title horizontally */
+  margin-top: 0; /* Removes top margin */
+  margin-bottom: 1rem; /* Adds space below the title */
+  text-align: center; /* Centers the text within the heading */
+}
+
+.card-front p, .card-back p {
+  align-self: flex-start; /* Aligns paragraphs to the start (left) */
+  text-align: left; /* Ensures text within paragraphs is left-aligned */
+  width: 100%; /* Allows paragraphs to take full width for better readability */
 }
 
 .card.flipped .card-inner {
   transform: rotateY(180deg);
 }
 
+@media (hover: hover) {
 .card:hover {
   transform: scale(1.02);
-  /* increase darkness */
+  /* Increase darkness */
   filter: brightness(0.8);
 }
-
-
-
-
-
-
+}
 
 
 
@@ -524,5 +547,63 @@ body.touchscreen #start::before {
 @media (min-width: 720px) {
   #start {
     --size: 35rem; /* Update size variable for larger screens */
+  }
+}
+
+
+/* about section  */
+
+/* Ensure first sentence in the introduction is on its own line */
+.intro {
+  margin-bottom: 20px; /* Adds space below the intro sentence */
+  line-height: 1.6;
+}
+
+/* Ensure subsections display inline if space allows */
+.about-content {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 20px; /* Space between sections */
+}
+
+.academic-section, .leadership-section, .core-principles {
+  flex: 1; /* Each section takes equal width if space permits */
+  min-width: 300px; /* Ensures sections stack if the screen is narrow */
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+ul li i {
+  margin-right: 10px;
+}
+
+.fa-solid {
+  color: var(--accent-color);
+}
+
+
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stacks sections on small screens */
   }
 }

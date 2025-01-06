@@ -37,7 +37,7 @@
     const phone = isDevicePhone(); // Forced to `true` for testing
     if (phone) {
       document.body.classList.add("touchscreen");
-      applyTheme("light"); // Default to light theme for phones
+      applyTheme("dark"); // Default to light theme for phones
     } else {
       applyTheme("dark"); // Default to dark theme for non-phones
     }

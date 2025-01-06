@@ -24,6 +24,8 @@ body.touchscreen #start{
     width: 99%;
   }
 
+  
+
 
 
 
@@ -32,6 +34,7 @@ body.touchscreen #start{
     width: 99%;
   }
   
+
   
   body.touchscreen #start.section {
     padding: 0rem;
@@ -70,15 +73,18 @@ body.touchscreen #start{
 
   body.touchscreen .Subtitle {
   
-    top: 30vh;
+    margin-top: 0;
+    top: calc(12vh + 4rem);
   }
 
 
   body.touchscreen .Title {
 
-    top: 12vh;
+    margin-top: 12vh;
+    margin-bottom: 0rem;
     /* increase font size 1.5x */
-    font-size: 3rem;
+    font-size: 2.4rem;
+    top:0;
     
   }
 
@@ -110,7 +116,7 @@ body.touchscreen .cards-container {
 /* Remove grid-specific properties and allow cards to take full width */
 body.touchscreen .card {
   width: 100%; /* Full width on mobile */
-  max-width: 400px; /* Optional: Limit maximum width */
+  max-width: 95dvw;
   perspective: 1000px; /* Ensure perspective for flip */
   margin: 0 auto; /* Center the card */
 }
