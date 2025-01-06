@@ -25,7 +25,9 @@ body.touchscreen #start{
   }
 
   
-
+body.touchscreen #endorsements img {
+  display: none;
+}
 
 
 

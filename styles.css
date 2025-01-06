@@ -484,7 +484,7 @@ margin-right: 0.5rem;
 .card:hover {
   transform: scale(1.02);
   /* Increase darkness */
-  filter: brightness(0.8);
+  filter: brightness(0.9);
 }
 }
 
@@ -521,7 +521,7 @@ margin-right: 0.5rem;
   height: 30dvw;
   filter: blur(calc(var(--size, 75px) / 20)); 
   background-image: linear-gradient(
-    hsl(28, 73%, 55%),
+    hsl(23, 69%, 46%),
     gold
   );
   animation: rotate var(--speed, 50s) var(--easing, cubic-bezier(0.8, 0.2, 0.2, 0.8)) 
@@ -601,9 +601,39 @@ p {
   line-height: 1.6;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column; /* Stacks sections on small screens */
-  }
+
+
+
+/* end  about section  */
+
+/* start projects links section */
+
+
+.project-button-container {
+
+  display: flex;
+  gap: 20px;
+  /* order of margins is for each of 4 params: top right bottom left */
+  margin: -0.25rem 0 0.5rem 0;
+}
+
+.button {
+
+  text-decoration: none;
+  color: #000;
+  background-color: var(--accent-color);
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+  
+
+@media (hover: hover)
+{
+
+ .button:hover {
+  
+  filter: brightness(0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 }
