@@ -145,6 +145,14 @@ body.touchscreen .cards-container {
   gap: 1rem; /* Adjust gap as needed */
 }
 
+body.touchscreen .cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+  overflow-x: hidden; /* Prevent overflow in landscape */
+}
+
+
 /* Remove grid-specific properties and allow cards to take full width */
 body.touchscreen .card {
   width: 100%; /* Full width on mobile */

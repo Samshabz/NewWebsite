@@ -283,7 +283,7 @@ body {
 
 
 #start.section {
-min-height: 100vh; /* Declared twice */
+min-height: 100dvh; /* Declared twice */
 display: flex;
 flex-direction: column;
 align-items: center;
