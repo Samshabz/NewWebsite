@@ -132,8 +132,10 @@ color: var(--h1-color);
   font-size: var(--icon-size);
 }
 
+@media (hover: hover) and (pointer: fine) {
  .ContactButton:hover i {
   color: #ffffff; /* Keep icon color white on hover */
+}
 }
 
  .LinkItem span {
