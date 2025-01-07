@@ -195,6 +195,9 @@ body.touchscreen .multi-card-row .card-back {
   
 }
 
+body.touchscreen #endorsements {
+  margin-top: 5rem;
+}
 
 
 /* Hide the back of the card by default on mobile */
