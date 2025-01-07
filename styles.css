@@ -91,33 +91,29 @@
   margin-top: 10px;
 }
 
-
 .arrow-down {
   position: absolute;
-  bottom: 1rem; /* Adjust as needed */
+  bottom: calc(5%); /* Adjust as needed */
   left: 50%;
-  transform: translateX(-50%) rotate(90deg); /* Rotate the '>' to point down */
+  transform: translateX(-50%);
   color: var(--h1-color); /* Use your CSS variable for color */
-  font-size: 3rem; /* Adjust size of the arrow */
-  font-weight: 100; /* Ensure the arrow is bold and prominent */
-  /* make font even thinner without weight */
-  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem; /* Adjust the size of the arrow */
   animation: bounce 1.5s infinite; /* Add bounce animation */
-  /* cursor: pointer; */
-  text-decoration: none; /* Removes underline */
+  cursor: pointer; /* Optional: pointer on hover */
 }
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
-    transform: translateX(-50%) translateY(0) rotate(90deg);
+    transform: translateX(-50%) translateY(0);
   }
   40% {
-    transform: translateX(-50%) translateY(-10px) rotate(90deg);
+    transform: translateX(-50%) translateY(-10px);
   }
   60% {
-    transform: translateX(-50%) translateY(-5px) rotate(90deg);
+    transform: translateX(-50%) translateY(-5px);
   }
 }
+
 
 /* CSS for angled line */
 .angled-line {
@@ -216,9 +212,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.download-button i {
-  margin-right: 8px; /* Space between icon and text */
-}
 
 .medal{
   /* transparency */
@@ -267,7 +260,7 @@ body {
 
 /* Section styling + fade-in transition */
 .section {
-  min-height: 100dvh;
+  min-height: 100vh;
   padding: 6rem 3rem 3rem 3rem;
   opacity: 0;
   transform: translateY(20px);
@@ -290,7 +283,7 @@ body {
 
 
 #start.section {
-min-height: 100dvh; /* Declared twice */
+min-height: 100vh; /* Declared twice */
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -336,70 +329,6 @@ h1, h2 {
 
 
 
-/* Buttons Start */
-
-/* Modern button styling */
-.EndorsementButton, .ContactButton {
-  background-color: gold;
-  color: #1b1b1b;
-  border: none;
-  padding: 0.8rem 1.2rem;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-@media (hover: hover) {
-.EndorsementButton:hover, .ContactButton:hover {
-  background-color: #d4af37;
-}
-}
-
-
-
-
-
-
-
-
-.EndorsementButton, .ContactButton {
-  display: block; /* Force buttons to stack */
-  margin: 10px auto; /* Add vertical spacing and center */
-  text-decoration: none;
-
-}
-
-
-.ContactButton img{
-margin-top: 0rem;
-margin: 0 0;
-width: 1rem;
-/* center vertically */
-height: 1rem;
-margin-right: 0.5rem;
-}
-
-
-.ContactButton, .EndorsementButton {
-  display: inline-flex; /* Use inline-flex to prevent stacking */
-  align-items: center; /* Vertically center the logo */
-  text-decoration: none;
-}
-
-/* 
-#contact img, #endorsements img {
-  display: none !important;
-} */
-/* 
-#contact, #endorsements  {
-  min-height: 0;
-} */
-
-
-
-/* Buttons End */
-
 
 
 #achievements, #projects {
@@ -412,7 +341,7 @@ margin-right: 0.5rem;
 .cards-container {
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   perspective: 1000px;
 }
 
@@ -431,7 +360,7 @@ margin-right: 0.5rem;
 
 .card-inner {
   width: 100%;
-  height: 200px;
+  height: 12rem;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   position: relative;
@@ -492,64 +421,6 @@ margin-right: 0.5rem;
 
 
 
-/* 1. Define the rotate animation */
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* 2. Style the #start section to position the pseudo-element correctly */
-#start {
-  position: relative; /* Establish a positioning context for the pseudo-element */
-  overflow: hidden;   /* Ensure the gradient doesn't overflow the section */
-  --size: 30rem;
-  --speed: 20s;
-  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
-}
-
-/* 3. Create the gradient effect using the ::before pseudo-element */
-#start::before {
-  content: "";
-  position: absolute;
-  top: calc(50%-15dvw); /* Adjusted to move up */
-  left: calc(50%-15dvw); /* Adjusted to move left */
-  width: 30dvw;
-  height: 30dvw;
-  filter: blur(calc(var(--size, 75px) / 20)); 
-  background-image: linear-gradient(
-    hsl(23, 69%, 46%),
-    gold
-  );
-  animation: rotate var(--speed, 50s) var(--easing, cubic-bezier(0.8, 0.2, 0.2, 0.8)) 
-             alternate infinite;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  transform: translate(-50%, -50%) rotate(0deg); /* Centers based on new top/left */
-  z-index: -1; /* Position the gradient behind the content */
-}
-
-body.touchscreen #start::before {
-  width: 50dvw;
-  height: 50dvw;
-  top: calc(25%); /* Adjusted to move up */
-  left: calc(25%); /* Adjusted to move left */
-}
-
-/* 5. Scope transitions to elements within #start only */
-#start * {
-  transition: all 0.5s ease-out;
-}
-
-/* 6. Adjust gradient size variables for larger screens */
-@media (min-width: 720px) {
-  #start {
-    --size: 35rem; /* Update size variable for larger screens */
-  }
-}
-
 
 /* about section  */
 
@@ -605,35 +476,3 @@ p {
 
 
 /* end  about section  */
-
-/* start projects links section */
-
-
-.project-button-container {
-
-  display: flex;
-  gap: 20px;
-  /* order of margins is for each of 4 params: top right bottom left */
-  margin: -0.25rem 0 0.5rem 0;
-}
-
-.button {
-
-  text-decoration: none;
-  color: #000;
-  background-color: var(--accent-color);
-  padding: 0.8rem 1.2rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-  
-
-@media (hover: hover)
-{
-
- .button:hover {
-  
-  filter: brightness(0.9);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-}

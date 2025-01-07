@@ -1,6 +1,12 @@
 
 /* Media queries */
 
+/* Define CSS variables if not already defined */
+:root {
+  --button-size: 50px;      /* Size of the circular buttons */
+  --icon-size: 24px;        /* Size of the icons */
+}
+
 
 
 body.touchscreen .sidebar {
@@ -14,20 +20,19 @@ body.touchscreen #start{
     background-image: none;
 }
 
+body.touchscreen #projects{
+
+  padding: 0 1rem 0 1rem;
+}
   body.touchscreen .section {
     width: 100vw;
     min-height: 0vh;
     padding: 1rem;
   }
 
-  body.touchscreen .ContactButton {
-    width: 99%;
-  }
+  
 
   
-body.touchscreen #endorsements img {
-  display: none;
-}
 
 
 
@@ -93,19 +98,44 @@ body.touchscreen #endorsements img {
     body.touchscreen .Subtitle {
         font-size: 1.5rem;
     }
+    
+    
 
-    body.touchscreen .ContactButton {
-        width: 100%;
-    }
+
+
+/* Styles specific to touchscreen devices */
+
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  body.touchscreen .LinkItem {
+    flex-direction: row; /* Keep row direction for better readability */
+    align-items: center;
+  }
+
+  body.touchscreen .LinkItem span {
+    margin-left: 15px;
+    margin-top: 0;
+  }
+}
+
+    
+
+    
+
+
+    /* cards */
+    
+
+
+
 
 
 
 
   
-
-
-
-    /* Ensure these styles are added after your existing CSS */
 
 
 body.touchscreen .cards-container {
@@ -118,7 +148,7 @@ body.touchscreen .cards-container {
 /* Remove grid-specific properties and allow cards to take full width */
 body.touchscreen .card {
   width: 100%; /* Full width on mobile */
-  max-width: 95dvw;
+  /* max-width: 95dvw; */
   perspective: 1000px; /* Ensure perspective for flip */
   margin: 0 auto; /* Center the card */
 }
@@ -162,3 +192,40 @@ body.touchscreen .card.flipped .card-front {
   display: none; /* Hide front when flipped */
 }
 
+
+
+/* project button starts */
+
+
+body.touchscreen .project-button-container {
+  /* centre the buttons */
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+
+/* project button ends */
+
+/* wallpaper start */
+
+body.touchscreen #start::before {
+  /* calculate minimum between 50vw and 50vh - set as width and height */
+  width: min(70vw, 70vh);
+  
+  height: min(70vw, 70vh);
+  /* the top distance equals: (vh - sqr_side_length)/2 */
+  top: calc((100vh - min(70vw, 70vh))/2);
+  /* same with left right */
+  left: calc((100vw - min(70vw, 70vh))/2);
+}
+
+/* wallpaper end */
+
+body.touchscreen .arrow-down {
+
+  
+  bottom: calc(15%); /* Adjust as needed */
+
+}

@@ -1,0 +1,57 @@
+
+/* 1. Define the rotate animation */
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* 2. Style the #start section to position the pseudo-element correctly */
+  #start {
+    position: relative; /* Establish a positioning context for the pseudo-element */
+    overflow: hidden;   /* Ensure the gradient doesn't overflow the section */
+    --size: 30rem;
+    --speed: 20s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+  }
+  
+  /* 3. Create the gradient effect using the ::before pseudo-element */
+  #start::before {
+    content: "";
+    position: absolute;
+    /* calculate minimum between 50vw and 50vh - set as width and height */
+    width: min(70vw, 70vh);
+    height: min(70vw, 70vh);
+    /* the top distance equals: (vh - sqr_side_length)/2 */
+    top: calc((100vh - min(70vw, 70vh))/2);
+    /* same with left right */
+    left: calc((100vw - min(70vw, 70vh)-15vw)/2 + 15vw);
+    filter: blur(calc(var(--size, 75px) / 20)); 
+    background-image: linear-gradient(
+      hsl(23, 69%, 46%),
+      gold
+    );
+    animation: rotate var(--speed, 50s) var(--easing, cubic-bezier(0.8, 0.2, 0.2, 0.8)) 
+               alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: translate(-50%, -50%) rotate(0deg); /* Centers based on new top/left */
+    z-index: -1; /* Position the gradient behind the content */
+  }
+  
+  
+  
+  /* 5. Scope transitions to elements within #start only */
+  #start * {
+    transition: all 0.5s ease-out;
+  }
+  
+  /* 6. Adjust gradient size variables for larger screens */
+  @media (min-width: 720px) {
+    #start {
+      --size: 35rem; /* Update size variable for larger screens */
+    }
+  }
+  

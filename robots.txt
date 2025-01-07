@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://samshabz.vercel.app/sitemap.xml

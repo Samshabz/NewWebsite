@@ -1,0 +1,160 @@
+/* Start Projects Links Section */
+
+.download-button i {
+    margin-right: 8px; /* Space between icon and text */
+  }
+  
+
+.project-button-container {
+    display: flex;
+    gap: 20px;
+    /* Order of margins: top, right, bottom, left */
+    margin: -0.25rem 0 0.5rem 0;
+}
+
+.button,
+.EndorsementButton,
+.ContactButton {
+    text-decoration: none !important;
+    color: #000;
+    
+    background-color: var(--accent-color);
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LinkItem, .ContactButton, span {
+text-decoration: none;
+color: var(--h1-color);
+}
+
+@media (hover: hover) and (pointer: fine){
+    .button:hover,
+    .EndorsementButton:hover,
+    .ContactButton:hover {
+        filter: brightness(0.9);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background-color: #d4af37; /* For .EndorsementButton and .ContactButton */
+    }
+}
+
+
+
+
+
+/* Buttons Start */
+
+/* Modern button styling */
+.EndorsementButton, .ContactButton {
+  background-color: gold;
+  
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+.EndorsementButton:hover, .ContactButton:hover {
+  background-color: #d4af37;
+}
+}
+
+
+
+
+
+
+
+
+.EndorsementButton, .ContactButton {
+  display: block; /* Force buttons to stack */
+  margin: 0 0 0 0 !important; /* Add vertical spacing and center */
+  text-decoration: none;
+
+}
+
+
+.ContactButton img {
+    display: inline-block; /* Ensure the image is inline and visible */
+    width: 1rem; /* Adjust size for uniformity */
+    height: 1rem; /* Ensure aspect ratio is maintained */
+    
+    object-fit: contain; /* Ensure the image scales correctly */
+    vertical-align: middle; /* Align image with text baseline */
+}
+
+
+
+.ContactButton, .EndorsementButton {
+  display: inline-flex; /* Use inline-flex to prevent stacking */
+  align-items: center; /* Vertically center the logo */
+  text-decoration: none;
+}
+
+
+
+.LinkItem {
+  display: flex;
+  align-items: center;
+  
+  margin-bottom: 20px;
+}
+
+.ContactButton {
+  /* adjust color of icon */
+  
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+
+ .ContactButton i {
+  color: var(--start-bg-color); /* Set icon color to white for better contrast */
+  font-size: var(--icon-size);
+}
+
+ .ContactButton:hover i {
+  color: #ffffff; /* Keep icon color white on hover */
+}
+
+ .LinkItem span {
+  margin-left: 15px;
+  
+  
+  font-size: 16px;
+  
+  word-break: break-word; /* Ensure long text wraps properly */
+}
+
+
+/* Buttons End */
+.LinkItem .icon {
+    width: 45px; /* Adjust size as needed */
+    height: 45px; /* Ensure consistent aspect ratio */
+    
+  }
+  
+  .LinkItem span {
+    font-size: 16px;
+    font-weight: bold;
+    
+  }

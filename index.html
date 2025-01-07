@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Sameer Shaboodien - Portfolio Website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+
+  <meta property="og:title" content="Sameer Shaboodien - Portfolio Website">
+  <meta property="og:description" content="A detailed look into my projects and achievements.">
+  <meta property="og:image" content="https://samshabz.vercel.app/images/OGIMAGE.png">
+  <meta property="og:url" content="https://samshabz.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Portfolio Website">
+  
+
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="./icons/S.ico" type="image/x-icon">
+
+  
 
   <!-- Existing CSS -->
+
+     <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="wallpaper.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="phone.css">
   <link rel="stylesheet" href="NightSwitch.css">
 
-  <!-- Animation CSS (only for #start)
-  <link rel="stylesheet" type="text/css" href="./backgroundshift/base.css" />
-  <link rel="stylesheet" type="text/css" href="./backgroundshift/demo3.css" /> -->
+  
 
-  <!-- Optional check for CSS variables -->
-  <script>
-    document.documentElement.className = "js";
-    var supportsCssVars = function() {
-      var e, t = document.createElement("style");
-      t.innerHTML = "root: { --tmp-var: bold; }";
-      document.head.appendChild(t);
-      e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
-      t.parentNode.removeChild(t);
-      return e;
-    };
-    if (!supportsCssVars()) {
-      alert("Please view this demo in a modern browser that supports CSS Variables.");
-    }
-  </script>
+
+
 </head>
 <body>
   <!-- Sidebar Navigation -->
@@ -40,7 +42,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#endorsements">Endorsements</a></li>
-      <!-- <li><a href="#achievements">Achievements</a></li> -->
+      
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -55,14 +57,13 @@
       <p class="Title">Sameer Shaboodien</p>
       <p class="Subtitle">Electrical and Electronic Engineer</p>
       
-      <!-- <br> -->
-      <!-- <canvas class="background-canvas"></canvas> -->
+      
       <br>
-      <a href="pdfs/FINAL CV.pdf" class="download-button" target="_blank">
+      <a href="pdfs/CV.pdf" class="download-button" target="_blank">
         <i class="fa fa-external-link"></i> Open Resume
       </a>
       <div class="theme-switch-wrapper">
-        <input id="checkbox" type="checkbox" />
+        <input id="checkbox" type="checkbox">
         <label class="switch" for="checkbox">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="slider">
             <path
@@ -73,9 +74,8 @@
       </div>
       
       
-
       <div class="arrow-down">
-        >
+        <i class="fas fa-chevron-down"></i>
       </div>
 
       
@@ -152,9 +152,9 @@
                 <h4>Synthesis and Evaluation of an Image-Based GNSS-Redundancy System for UAV Navigation</h4>
 
               <div class="project-button-container">
-                  <a href="/pdfs/Thesis.pdf" target="_blank" class="button">Paper</a>
+                  <a href="./pdfs/Thesis.pdf" target="_blank" class="button">Paper</a>
                   <a href="https://github.com/Samshabz/Skripsie" target="_blank" class="button">Code</a>
-                  <a href="Thesisposter.pdf" target="_blank" class="button">Poster</a>
+                  <a href="./pdfs/ThesisPoster.pdf" target="_blank" class="button">Poster</a>
               </div>
 
                 
@@ -186,7 +186,7 @@
             <div class="card-back">
               <h4>E-Design 1 Details</h4>
             <div class="project-button-container">
-              <a href="/pdfs/EDES1.pdf" target="_blank" class="button">Paper</a>
+              <a href="./pdfs/EDES1.pdf" target="_blank" class="button">Paper</a>
               <a href="https://github.com/Samshabz/E-Design-314-Project" target="_blank" class="button">Code</a>
           </div>
 
@@ -211,7 +211,7 @@
             <div class="card-back">
               <h4>E-Design 2 Details</h4>
               <div class="project-button-container">
-                <a href="/pdfs/EDES2.pdf" target="_blank" class="button">Paper</a>
+                <a href="./pdfs/EDES2.pdf" target="_blank" class="button">Paper</a>
                 
             </div>  
               
@@ -260,6 +260,11 @@
             </div>
             <div class="card-back">
               <h4>Smart System Details</h4>
+
+              <div class="project-button-container">
+              <a href="https://github.com/Samshabz/E-Design-314-Project" target="_blank" class="button">Code</a>
+          </div>
+
               <p>
                 This project showcased my passion for smart home and IoT technologies. I created a 6-meter smart lighting strip with individually addressable RGB LEDs, featuring dynamic music visualization, interactive games, and customizable patterns. The system was controlled through a user-friendly, locally hosted web interface. 
                 <br>
@@ -268,8 +273,6 @@
                 I also plan to explore Matter integration to align with future smart home standards.
 
               </p>
-
-              <a href="https://github.com/Samshabz/E-Design-314-Project" target="_blank" class="button">Code</a>
 
             </div>
           </div>
@@ -300,143 +303,63 @@
 
 
     
-    <!-- ENDORSEMENTS -->
-    <section id="endorsements" class="section">
-      <div class="gold-block">
-      <h2>
-        Endorsements
-      </h2>
-    </div>
-      
-      <br>
-
-      <a href="pdfs/Octoco.pdf" class="EndorsementButton" target="_blank" rel="noopener noreferrer">
-        Octoco
-      </a>
-      <a href="pdfs/Lantern.pdf" class="EndorsementButton" target="_blank" rel="noopener noreferrer">
-        Lantern Engineering
-      </a>
-
-      <a href="pdfs/Stellenbosch.pdf" class="EndorsementButton" target="_blank" rel="noopener noreferrer">
-        Stellenbosch University
-      </a>
-      
-      <br><br>
-      
-
-      <div class="gallery">
-        <img src="images/medal.jpg" alt="Description of the picture" class="single-image medal">
-      </div>
-    </section>
+<!-- ENDORSEMENTS -->
+<section id="endorsements" class="section">
+  <h2>Endorsements</h2>
+  <br>
+  <div class="LinkItem">
+    <a href="pdfs/Octoco.pdf" class="ContactButton" target="_blank" rel="noopener noreferrer" aria-label="Octoco Endorsement">
+      <img src="icons/OCTICO.png" alt="Octoco Icon" class="icon">
+    </a>
+    <span>Octoco</span>
+  </div>
+  <div class="LinkItem">
+    <a href="pdfs/Lantern.pdf" class="ContactButton" target="_blank" rel="noopener noreferrer" aria-label="Lantern Engineering Endorsement">
+      <img src="icons/LANICO.png" alt="Lantern Engineering Icon" class="icon">
+    </a>
+    <span>Lantern Engineering</span>
+  </div>
+  <div class="LinkItem">
+    <a href="pdfs/Stellenbosch.pdf" class="ContactButton" target="_blank" rel="noopener noreferrer" aria-label="Stellenbosch University Endorsement">
+      <img src="icons/SUICO.png" alt="Stellenbosch University Icon" class="icon">
+    </a>
+    <span>Stellenbosch University</span>
+  </div>
+  
+</section>
 
 
-<!-- 
-    <section id="achievements" class="section">
-      <h2>Achievements</h2>
-      <p class="grid-intro">Click to flip card</p>
-      <br>
-      <div class="cards-container">
 
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Project 1</h3>
-              <p>Short description</p>
-            </div>
-            <div class="card-back">
-              <h4>More details</h4>
-              <p>Full description goes here.</p>
-            </div>
-          </div>
-        </div>
 
-        
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Project 2</h3>
-              <p>Short description</p>
-            </div>
-            <div class="card-back">
-              <h4>More details</h4>
-              <p>Full description goes here.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Project 2</h3>
-              <p>Short description</p>
-            </div>
-            <div class="card-back">
-              <h4>More details</h4>
-              <p>Full description goes here.</p>
-            </div>
-          </div>
-        </div>
-        
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <br>
+  <div class="LinkItem">
+    <a href="tel:+27786109425" class="ContactButton" aria-label="Call Phone">
+      <i class="fas fa-phone"></i>
+    </a>
+    <span>+27 78 610 9425</span>
+  </div>
+  <div class="LinkItem">
+    <a href="mailto:samshabz13@gmail.com" class="ContactButton" aria-label="Send Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <span>Samshabz13@gmail.com</span>
+  </div>
+  <div class="LinkItem">
+    <a href="https://www.linkedin.com/in/sameer-shaboodien/" target="_blank" class="ContactButton" aria-label="Visit LinkedIn Profile">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <span>Sameer Shaboodien</span>
+  </div>
+</section>
 
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Project 2</h3>
-              <p>Short description</p>
-            </div>
-            <div class="card-back">
-              <h4>More details</h4>
-              <p>Full description goes here.</p>
-            </div>
-          </div>
-        </div>
-        
-
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>Project 2</h3>
-              <p>Short description</p>
-            </div>
-            <div class="card-back">
-              <h4>More details</h4>
-              <p>Full description goes here.</p>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </section> -->
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <br>
-      <a href="tel:+27786109425" class="ContactButton">
-        <img src="icons/phone.png" alt="Phone">
-        +27 78 610 9425
-      </a>
-      <a href="mailto:samshabz13@gmail.com" class="ContactButton">
-        <img src="icons/email.png" id="LINKEDIN" alt="Email">
-        Samshabz13@gmail.com
-      </a>
-      <a href="https://www.linkedin.com/in/sameer-shaboodien/?originalSubdomain=za" target="blank" class="ContactButton">
-        <img src="icons/linkedin.png" alt="User">
-        Sameer Shaboodien
-      </a>
-<!-- 
-      <div class="gallery">
-        <img src="images/coffee.jpg" alt="Description of the picture" class="single-image">
-      </div> -->
-    </section>
   </div>
 
   <!-- Existing scripts -->
   <script src="script.js"></script>
 
-  <!-- Animation scripts (only for the start section) -->
-  <!-- <script src="./backgroundshift/noise.min.js"></script>
-  <script src="./backgroundshift/util.js"></script>
-  <script src="./backgroundshift/swirl.js"></script> -->
+  
 </body>
 </html>
