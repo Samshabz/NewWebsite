@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeSwitchCheckbox = document.querySelector("#checkbox");
   const sections = document.querySelectorAll(".section");
   const navLinks = document.querySelectorAll(".sidebar a");
+  const cards = document.querySelectorAll(".card");
 
   // Create a map for quick link lookups
   const linkMap = new Map();
@@ -24,19 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
     updateThemeColor();
   };
 
-  // Force phone mode for testing (Set to `true` or `false` explicitly)
   const isDevicePhone = () => {
+    // Force phone mode for testing (Set to `true` or `false` explicitly)
     return true;
+    /*
     return (
       "ontouchstart" in window ||
       navigator.maxTouchPoints > 10 ||
       /Mobi|Android/i.test(navigator.userAgent)
     );
+    */
   };
 
-  // Initialize theme based on localStorage or device type
   const initializeTheme = () => {
-    const phone = isDevicePhone(); // Forced to `true` for testing
+    const phone = isDevicePhone();
     if (phone) {
       document.body.classList.add("touchscreen");
       applyTheme("dark"); // Default to dark theme for phones
@@ -45,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Function to dynamically update theme color based on CSS variable
   const updateThemeColor = () => {
     const themeColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color').trim();
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
@@ -54,31 +55,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Observer to dynamically watch for theme changes
   const observer = new MutationObserver(updateThemeColor);
   observer.observe(document.documentElement, { attributes: true, attributeFilter: ['style'] });
 
-  // Initialize the theme on page load
   initializeTheme();
 
-  // Update theme on toggle and save preference
   themeSwitchCheckbox.addEventListener("change", () => {
     if (themeSwitchCheckbox.checked) {
-      applyTheme("light"); // Checkbox "on" means light mode
+      applyTheme("light");
       localStorage.setItem("theme", "light");
     } else {
-      applyTheme("dark"); // Checkbox "off" means dark mode
+      applyTheme("dark");
       localStorage.setItem("theme", "dark");
     }
   });
 
-  // Prevent unintended scroll on reload
   window.history.scrollRestoration = "manual";
   window.scrollTo(0, 0);
 
-  // Observer for section visibility and navigation links
-  const upperThreshold = 0.32; // Upper edge of buffer zone
-  const lowerThreshold = 0.28; // Lower edge of buffer zone
+  const upperThreshold = 0.32;
+  const lowerThreshold = 0.28;
 
   const sectionStates = new Map();
   const observerForSections = new IntersectionObserver(
@@ -111,8 +107,41 @@ document.addEventListener("DOMContentLoaded", () => {
     sectionStates.set(section.getAttribute("id"), "hidden");
   });
 
+  // Function to check the number of cards per row and apply CSS class
+  const checkCardsPerRow = () => {
+    const cardRows = new Map();
+    cards.forEach((card) => {
+      const row = Math.round(card.getBoundingClientRect().top);
+      cardRows.set(row, (cardRows.get(row) || 0) + 1);
+    });
+
+    // Determine if any row has 2 or more cards
+    let hasMultipleCardsPerRow = false;
+    cardRows.forEach((count) => {
+      if (count >= 2) {
+        hasMultipleCardsPerRow = true;
+      }
+    });
+
+    if (hasMultipleCardsPerRow) {
+      cards.forEach((card) => {
+        card.classList.add("multi-card-row");
+      });
+    } else {
+      cards.forEach((card) => {
+        card.classList.remove("multi-card-row");
+      });
+    }
+  };
+
+  // Run on load
+  checkCardsPerRow();
+
+  // Run on resize and orientation change
+  window.addEventListener("resize", checkCardsPerRow);
+  window.addEventListener("orientationchange", checkCardsPerRow);
+
   // Flip card logic
-  const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     card.addEventListener("click", () => {
       document.querySelectorAll(".card.expanded").forEach((openCard) => {

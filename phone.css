@@ -163,7 +163,7 @@ body.touchscreen .card {
 
 /* Remove fixed height and allow dynamic height based on content */
 body.touchscreen .card-inner {
-  height: auto; /* Remove fixed height */
+  height: auto; /* Allow height to adjust based on content */
   padding-top: 0; /* Remove aspect ratio padding */
   transition: transform 0.6s; /* Ensure transition remains smooth */
   transform-style: preserve-3d;
@@ -178,11 +178,24 @@ body.touchscreen .card.expanded .card-inner {
 body.touchscreen .card-front,
 body.touchscreen .card-back {
   position: relative; /* Remove absolute positioning */
-  height: auto; /* Let height be determined by content */
+  height: auto; 
   backface-visibility: hidden;
   padding: 1rem; /* Adjust padding for mobile readability */
   box-sizing: border-box;
 }
+
+body.touchscreen .multi-card-row .card-inner {
+  height: 12rem !important; /* Set fixed height for consistent row height */
+  
+}
+
+body.touchscreen .multi-card-row .card-front,
+body.touchscreen .multi-card-row .card-back {
+  height: 100% !important;
+  
+}
+
+
 
 /* Hide the back of the card by default on mobile */
 body.touchscreen .card-back {
@@ -194,6 +207,7 @@ body.touchscreen .card-back {
 /* Show back when the card is flipped */
 body.touchscreen .card.flipped .card-back {
   display: block; /* Show back when flipped */
+  
 }
 
 body.touchscreen .card.flipped .card-front {
