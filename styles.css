@@ -135,6 +135,7 @@
 
 
 body {
+  overflow-x: hidden;
   font-family: "Helvetica Neue", Arial, sans-serif;
   background-color: var(--bg-color);
   transition: background-color 0.5s ease, color 0.5s ease; /* Add transition here */
@@ -370,6 +371,7 @@ h1, h2 {
   min-height: 300px; /* Expand height when clicked */
 }
 
+
 .card-front, .card-back {
   display: flex;
   flex-direction: column;
@@ -411,7 +413,7 @@ h1, h2 {
 
 @media (hover: hover) and (pointer: fine) {
 .card:hover {
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
   /* Increase darkness */
   filter: brightness(0.9);
 }
