@@ -24,7 +24,7 @@
 
     // Force phone mode for testing (Set to `true` or `false` explicitly)
     const isDevicePhone = () => {
-      // return true;  
+      return true;  
       return (
         "ontouchstart" in window ||
         navigator.maxTouchPoints > 10 ||
