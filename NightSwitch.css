@@ -1,7 +1,7 @@
 /* Container for the theme switch */
 .theme-switch-wrapper {
   position: absolute;
-  top: 60vh; /* Adjust position as needed */
+  top: 50vh; /* Adjust position as needed */
   right: 50%;
   transform: translateX(50%);
   z-index: 1000;

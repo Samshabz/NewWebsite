@@ -84,6 +84,12 @@ body.touchscreen #projects{
     top: calc(12vh + 4rem);
   }
 
+  body.touchscreen .download-button {
+  
+    margin-top: 0;
+    top: calc(12vh + 7rem);
+  }
+
 
   body.touchscreen .Title {
 
