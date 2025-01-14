@@ -19,16 +19,17 @@
   }
   
   /* 3. Create the gradient effect using the ::before pseudo-element */
-  #start::before {
+  #fixed-gradient {
     content: "";
-    position: absolute;
+    position: fixed;
     /* calculate minimum between 50vw and 50vh - set as width and height */
     width: min(70vw, 70vh);
     height: min(70vw, 70vh);
     /* the top distance equals: (vh - sqr_side_length)/2 */
     top: calc((100vh - min(70vw, 70vh))/2);
     /* same with left right */
-    left: calc((100vw - min(70vw, 70vh)-0)/2 + 0);
+    left: calc((100vw - min(70vw, 70vh))/2);
+    /* left: 35vh; */
     filter: blur(calc(var(--size, 75px) / 20)); 
     background-image: linear-gradient(
       var(--wallpapercomplement-color),

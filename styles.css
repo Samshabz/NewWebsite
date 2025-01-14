@@ -302,7 +302,7 @@ text-align: center;
 
 /* Start page with distinct orange-ish background */
 #start {
-  background-color: var(--start-bg-color);
+  /* background-color: var(--start-bg-color); */
   /* background image bg.jpg */
   /* background-image: url('bg.jpg'); */
   background-size: cover;

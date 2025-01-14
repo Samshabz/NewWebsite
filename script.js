@@ -157,7 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 function adjustColorOverTime() {
   const root = document.documentElement;
 
@@ -168,13 +167,13 @@ function adjustColorOverTime() {
     hueShift = (hueShift + 1) % 360;
 
     // Adjust the colors dynamically
-    const wallpaperColor = `hsl(${(75 + hueShift) % 360}, 70%, 50%)`; // Base hue is 200
-    const accentColor = `hsl(${(12 + hueShift) % 360}, 69%, 60%)`; // Base hue is 23
+    const wallpaperColor = `hsl(${(75 + hueShift) % 360}, 70%, 50%)`; // Base hue
+    const accentColor = `hsl(${(12 + hueShift) % 360}, 69%, 60%)`; // Base hue
 
     // Update the CSS variables
     root.style.setProperty('--wallpapercomplement-color', wallpaperColor);
     root.style.setProperty('--wallpaperaccent-color', accentColor);
-  }, 50); // Adjust every 100ms for smooth transitions
+  }, 50); // Adjust every 50ms for smooth transitions
 }
 
 // Start the dynamic adjustment
