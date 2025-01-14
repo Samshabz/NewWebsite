@@ -135,10 +135,7 @@ color: var(--h1-color);
 
  .LinkItem span {
   margin-left: 15px;
-  
-  
   font-size: 16px;
-  
   word-break: break-word; /* Ensure long text wraps properly */
 }
 

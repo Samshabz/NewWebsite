@@ -24,7 +24,10 @@
     --card-back-color: #fff6; /* Define a variable for card back color */
     --card-outline-color: #dadada; /* Define a variable for card outline color */
     --bg-color: #f4f4f4; /* Define a variable for background color */
-    --accent-color: gold; /* Define a variable for accent color */
+    --wallpaperaccent-color: hsl(35, 100%, 50%);
+    --wallpapercomplement-color: hsl(12, 86%, 46%);
+    --accent-color: gold;
+    transition: --wallpapercomplement-color 0.25s ease, --wallpaperaccent-color 0.25s ease;
     --side-outline-color: #999;
      /* #e69900; Define a variable for start background color */
     --hr-color: #333;
@@ -42,13 +45,14 @@
   
   --side-outline-color: #333;
   --h1-color: #fff; /* Define a variable for h1 color */
-  --h2-color: gold; /* Define a variable for h2 color */
+ 
   --h3-color: #fff; /* Define a variable for h3 color */
   --p-color: #ddd; /* Define a variable for paragraph color */
   --sidebar-textcolor: #bbb; /* Define a variable for sidebar text color */
   --hr-color: #aaa;
-  --accent-color: gold;
-
+  
+  
+  --h2-color: var(--accent-color);
   --card-front-color: #2b2b2b; /* Define a variable for card front color */
   --card-back-color: #3a3a3a; /* Define a variable for card back color */
   --card-outline-color: #444; /* Define a variable for card outline color */
@@ -361,7 +365,7 @@ h1, h2 {
 
 .card-inner {
   width: 100%;
-  height: 12rem;
+  height: 16rem;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   position: relative;

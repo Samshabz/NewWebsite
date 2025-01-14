@@ -1,0 +1,71 @@
+@use "sass:math";
+@use "sass:string";
+
+@function multiple-box-shadow($count) {
+  $shadows: '';
+  @for $i from 1 through $count {
+    $x: math.random(2000) + px;
+    $y: math.random(2000) + px;
+    $shadows: if($i == 1, "#{$x} #{$y} #FFF", "#{$shadows}, #{$x} #{$y} #FFF");
+  }
+  @return string.unquote($shadows);
+}
+
+$stars-small:  multiple-box-shadow(700);
+$stars-medium: multiple-box-shadow(200);
+$stars-big:    multiple-box-shadow(100);
+
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow-x: hidden;
+}
+
+// Each stars layer is positioned absolutely
+// and will be shifted in JS for parallax
+#stars,
+#stars2,
+#stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2000px;
+  pointer-events: none;
+}
+
+#stars {
+  box-shadow: $stars-small;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+    height: 2000px;
+    box-shadow: $stars-small;
+  }
+}
+
+#stars2 {
+  box-shadow: $stars-medium;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+    height: 2000px;
+    box-shadow: $stars-medium;
+  }
+}
+
+#stars3 {
+  box-shadow: $stars-big;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: 100%;
+    height: 2000px;
+    box-shadow: $stars-big;
+  }
+}
