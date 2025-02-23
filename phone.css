@@ -92,7 +92,7 @@ body.touchscreen #projects{
 
 
   body.touchscreen .Title {
-    font-size: max(3rem, 6vw);
+    font-size: max(2.2rem, 6vw);
     display: flex;
     align-items: center; /* Vertically centers */
     justify-content: center; /* Horizontally centers */
