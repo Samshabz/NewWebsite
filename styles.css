@@ -91,7 +91,7 @@
   z-index: 10000; 
   color: var(--h1-color);
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem; /* Smaller subtitle */
+  
   font-weight: 300;
   text-align: center;
   margin-top: 10px;
