@@ -81,27 +81,28 @@ body.touchscreen #projects{
   body.touchscreen .Subtitle {
   
     margin-top: 0;
-    top: calc(12vh + 4rem);
+    
   }
 
   body.touchscreen .download-button {
   
     margin-top: 0;
-    top: calc(12vh + 7rem);
+    /* top: calc(12vh + 7rem+ 110rem); */
   }
 
 
   body.touchscreen .Title {
+    font-size: max(3.4rem, 6vw);
+    display: flex;
+    align-items: center; /* Vertically centers */
+    justify-content: center; /* Horizontally centers */
+    height: 26vh; /* Adjust height to control positioning */
+}
 
-    margin-top: 12vh;
-    margin-bottom: 0rem;
-    /* increase font size 1.5x */
-    font-size: 2.4rem;
-    top:0;
-    
-  }
+  
 
     body.touchscreen .Subtitle {
+      
         font-size: 1.5rem;
     }
     
@@ -191,7 +192,7 @@ body.touchscreen .card-back {
 }
 
 body.touchscreen .multi-card-row .card-inner {
-  height: 12rem !important; /* Set fixed height for consistent row height */
+  height: 10rem !important; /* Set fixed height for consistent row height */
   
 }
 

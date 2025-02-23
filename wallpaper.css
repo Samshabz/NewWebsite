@@ -29,7 +29,8 @@
     top: calc((100vh - min(70vw, 70vh))/2);
     /* same with left right */
     left: calc((100vw - min(70vw, 70vh)-0)/2 + 0);
-    filter: blur(calc(var(--size, 75px) / 20)); 
+    filter: brightness(0.8) blur(calc(var(--size, 75px) / 20));
+
     background-image: linear-gradient(
       var(--wallpapercomplement-color),
       var(--wallpaperaccent-color)

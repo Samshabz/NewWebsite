@@ -20,10 +20,10 @@
     --p-color: #000; /* Define a variable for paragraph color */
     --sidebar-textcolor: #333; /* Define a variable for sidebar text color */
     --bg-color: #f4f4f4; /* Define a variable for background color */
-    --card-front-color: rgba(255, 255, 255, 0.228); /* Define a variable for card front color */
-    --card-back-color: #fff6; /* Define a variable for card back color */
-    --card-outline-color: #dadada; /* Define a variable for card outline color */
-    --bg-color: #f4f4f4; /* Define a variable for background color */
+    --card-front-color: #ddd; /* Define a variable for card front color */
+    --card-back-color: var(--card-front-color); /* Define a variable for card back color */
+    --card-outline-color: #fff0; /* Define a variable for card outline color */
+    --bg-color: #eee; /* Define a variable for background color */
     --wallpaperaccent-color: hsl(35, 100%, 50%);
     --wallpapercomplement-color: hsl(12, 86%, 46%);
     --accent-color: gold;
@@ -31,6 +31,7 @@
     --side-outline-color: #999;
      /* #e69900; Define a variable for start background color */
     --hr-color: #333;
+    --bottom-line-color: #333;
   
 
     }
@@ -38,6 +39,7 @@
 
     
 .dark-theme {
+  --bottom-line-color: #fff;
   --start-bg-color: #000;
   --bg-color: #000000; /* Define a variable for background color */
   --sidebg-color: #545454;
@@ -53,9 +55,9 @@
   
   
   --h2-color: var(--accent-color);
-  --card-front-color: #2b2b2b; /* Define a variable for card front color */
-  --card-back-color: #3a3a3a; /* Define a variable for card back color */
-  --card-outline-color: #444; /* Define a variable for card outline color */
+  --card-front-color: #131313; /* Define a variable for card front color */
+  --card-back-color: var(--card-front-color); /* Define a variable for card back color */
+  --card-outline-color: #000; /* Define a variable for card outline color */
 
 }
 
@@ -71,7 +73,7 @@
 
 .Title {
   position: absolute;
-  top: 15vh;
+  
   z-index: 10000;
   padding-top: 1rem;
   color: var(--h1-color);
@@ -85,7 +87,7 @@
 
 .Subtitle {
   position: absolute;
-  top: 30vh;
+  top: 26vh;
   z-index: 10000; 
   color: var(--h1-color);
   font-family: 'Roboto', sans-serif;
@@ -119,22 +121,6 @@
 }
 
 
-/* CSS for angled line */
-.angled-line {
-  position: absolute;
-  bottom: 30%; /* Start 25% from the bottom of the page */
-  left: 0; /* Start at the left edge */
-  width: 100vw; /* Stretch across the page */
-  height: 2px; /* Thickness of the line */
-  background-color: var(--h1-color); /* Line color */
-  transform: rotate(-10deg); /* Rotate to 20 degrees */
-  transform-origin: left bottom; /* Rotate from the left bottom corner */
-}
-
-
-
-
-
 
 
 
@@ -147,59 +133,23 @@ body {
   scroll-behavior: smooth;
 }
 
-
-
-/* Sidebar styling */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 15vw;
-  padding-right: 1rem;  
-  height: 100dvh;
-  background-color: var(--sidebg-color);
-  transition: background-color 0.5s ease, color 0.5s ease; /* Add transition here */
-  /* border-right: 1px solid var(--h1-color); */
-  padding-top: 3rem;
-  z-index: 10;
-}
-.sidebar ul {
-  list-style: none;
-  margin: 0 0 0 1rem;
-  padding: 0;
-  text-transform: uppercase;
-}
-.sidebar li {
-  margin-bottom: 1rem;
-}
-.sidebar a {
-  text-decoration: none;
-  color: var(--sidebar-textcolor);
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: color 0.3s;
+html {
+ scroll-behavior: smooth;
+  
 }
 
-@media (hover: hover) and (pointer: fine) {
-.sidebar a:hover,
-.dark-theme .sidebar .active {
-  color: var(--accent-color);
-}
-}
 
-.light-theme .sidebar .active {
-  /* text-decoration: bold; */
-  font-weight: bold;
-  /* underline color */
-  text-decoration-color: var(--sidebar-textcolor);
-}
 
 
 
 .download-button {
   z-index: 10000;
   position: absolute;
-  top: 35vh;
+  /* top: calc(35vh - 1rem); */
+  /* top: calc(33vh + 7rem);
+   */
+   margin-top: 1.3rem !important;
+   top: calc(30vh);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -365,7 +315,7 @@ h1, h2 {
 
 .card-inner {
   width: 100%;
-  height: 16rem;
+  
   transition: transform 0.6s;
   transform-style: preserve-3d;
   position: relative;
@@ -388,7 +338,7 @@ h1, h2 {
   height: 100%;
   backface-visibility: hidden;
   background: var(--card-front-color);
-  border: 1px solid #ccc;
+  border: 1px solid var(--card-outline-color);
   border-radius: 5px;
 }
 
@@ -505,3 +455,13 @@ p {
 
 
 /* end  about section  */
+
+
+
+.bottom-line {
+  width: 40vw;
+  height: 1px;
+  background-color: var(--bottom-line-color); /* Adjust color as needed */
+  padding: 0px;
+  margin: 1rem auto 2rem auto; /* Adjust margin as needed - top right bottom left */
+}
